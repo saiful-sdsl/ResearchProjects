@@ -1,0 +1,46 @@
+<idea-plugin>
+  <id>com.arabin.DroidPatrol</id>
+  <name>DroidPatrol</name>
+  <version>1.0</version>
+  <vendor email="arabin.tappware@gmail.com" url="http://www.KSU.com">KSU</vendor>
+
+  <description><![CDATA[
+      This plugin does tainted data flow analysis of android applications<br>
+      <em>Tainted data flow analyzer</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial version changes required in the future<br>
+      <em>Check for updates</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <group id = "MyPlugin.DroidPatrol" text="DroidPatrol" description="Tainted data flow">
+      <add-to-group group-id="MainMenu" anchor="last"/>
+      <!--<action id="Myplugin.BUILDAPK" class="actions.BuildApk" text="Build Apk" description="this builds android apk">-->
+      <!--</action>-->
+      <action id="Myplugin.Eye" class="actions.Eye" text="Eye" description="executor">
+      </action>
+    </group>
+  </actions>
+
+  <application-components>
+    <component>
+      <implementation-class>DroidEyeComponent</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>
